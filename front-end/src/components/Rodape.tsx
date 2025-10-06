@@ -48,4 +48,12 @@ aria-hidden
 {c.name} <span className="text-xs text-gray-500">- RM: {c.rm}</span>
 </span>
 </li>
+))}
+</ul>
+</div>
+<div className="text-center">
+<p className="text-sm text-gray-500 dark:text-gray-400">&copy; {year} - Direitos reservados</p>
+<p className="text-xs text-gray-400 mt-1">Feito com ❤️ e atenção aos detalhes</p>
+</div>
 </footer>
+

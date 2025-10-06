@@ -1,10 +1,16 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Aluno Teste",
       "nomeUsuario": "alunoteste",
       "email": "aluno@test.com"
+    },
+    {
+      "id": "30ff",
+      "nome": "Paulo",
+      "nomeUsuario": "phestalise",
+      "email": "phestalise@gmail.com"
     }
   ]
 }

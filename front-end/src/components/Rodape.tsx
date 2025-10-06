@@ -43,8 +43,9 @@ strokeLinejoin="round"
 aria-hidden
 >
 <path d="M12 2l3 7h6l-5 4 2 7-7-4-7 4 2-7-5-4h6z" />
-
-
 </svg>
+<span>
+{c.name} <span className="text-xs text-gray-500">- RM: {c.rm}</span>
+</span>
 </li>
 </footer>

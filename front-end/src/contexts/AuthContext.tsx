@@ -1,4 +1,5 @@
-import React, { createContext, useState, ReactNode } from "react";
+
+import { createContext, useState, ReactNode, useContext } from "react";
 import type { Usuario } from "../types/usuario";
 
 type AuthContextType = {
@@ -7,16 +8,19 @@ type AuthContextType = {
   logout: () => void;
 };
 
-export const AuthContext = createContext<AuthContextType>({
-  user: null,
-  login: () => {},
-  logout: () => {}
-});
+
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+export function useAuth() {
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error("useAuth must be used within AuthProvider");
+  return ctx;
+}
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<Usuario | null>(() => {
-    const s = localStorage.getItem("authUser") || sessionStorage.getItem("authUser");
-    return s ? JSON.parse(s) : null;
+    const s = localStorage.getItem("authUser") ?? sessionStorage.getItem("authUser");
+    return s ? (JSON.parse(s) as Usuario) : null;
   });
 
   function login(u: Usuario, remember = false) {

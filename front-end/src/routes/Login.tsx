@@ -1,9 +1,9 @@
+
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { api } from "../services/api";
 import type { Usuario } from "../types/usuario";
-import { useContext } from "react";
-import { AuthContext } from "../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 
 type FormValues = {
   nomeUsuario: string;
@@ -13,7 +13,7 @@ type FormValues = {
 
 export default function Login() {
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormValues>();
-  const { login } = useContext(AuthContext);
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   async function onSubmit(data: FormValues) {
@@ -24,7 +24,6 @@ export default function Login() {
 
       const found = resp.data.find(u => u.nomeUsuario === data.nomeUsuario && u.email === data.email);
       if (!found) {
-        // mensagem de erro personalizada
         alert("Usuário não encontrado. Verifique nome de usuário e email.");
         return;
       }
@@ -33,7 +32,7 @@ export default function Login() {
       navigate("/home");
     } catch (err) {
       console.error(err);
-      alert("Erro ao tentar autenticar. Verifique o servidor.");
+      alert("Erro ao tentar autenticar. Veja console.");
     }
   }
 
@@ -44,21 +43,15 @@ export default function Login() {
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div className="mb-4">
           <label className="block text-sm">Nome de usuário</label>
-          <input
-            {...register("nomeUsuario", { required: "O nome de usuário é obrigatório", minLength: { value: 3, message: "Mínimo 3 caracteres" } })}
-            className="w-full mt-1 p-2 border rounded"
-            placeholder="nomeUsuario"
-          />
+          <input {...register("nomeUsuario", { required: "O nome de usuário é obrigatório", minLength: { value: 3, message: "Mínimo 3 caracteres" } })}
+                 className="w-full mt-1 p-2 border rounded" placeholder="nomeUsuario" />
           {errors.nomeUsuario && <p className="text-red-600 text-sm mt-1">{errors.nomeUsuario.message}</p>}
         </div>
 
         <div className="mb-4">
           <label className="block text-sm">Email</label>
-          <input
-            {...register("email", { required: "O email é obrigatório", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Formato de email inválido" } })}
-            className="w-full mt-1 p-2 border rounded"
-            placeholder="seu@exemplo.com"
-          />
+          <input {...register("email", { required: "O email é obrigatório", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Formato de email inválido" } })}
+                 className="w-full mt-1 p-2 border rounded" placeholder="seu@exemplo.com" />
           {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email.message}</p>}
         </div>
 

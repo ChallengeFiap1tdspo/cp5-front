@@ -1,3 +1,15 @@
+import React from "react";
+
+type Contributor = {
+name: string;
+rm: string;
+};
+
+const contributors: Contributor[] = [
+{ name: "Paulo Estalise", rm: "563811" },
+{ name: "Emanuel Italo", rm: "561337" },
+];
+
 export default function Rodape() {
   return (
     <footer className="py-4 text-center text-sm text-gray-600 border-t mt-6">
@@ -7,3 +19,4 @@ export default function Rodape() {
     </footer>
   );
 }
+

@@ -7,7 +7,7 @@ import Cadastro from "./routes/Cadastro";
 import Home from "./routes/Home";
 
 import { AuthProvider } from "./contexts/AuthContext";
-import "./globals.css";
+import "./global.css";
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

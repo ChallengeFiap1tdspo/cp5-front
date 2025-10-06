@@ -1,4 +1,4 @@
-
+// src/contexts/AuthContext.tsx
 import { createContext, useState, ReactNode, useContext } from "react";
 import type { Usuario } from "../types/usuario";
 
@@ -8,9 +8,10 @@ type AuthContextType = {
   logout: () => void;
 };
 
+// exportado para compatibilidade com imports antigos
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
-
+// hook seguro (recomendado)
 export function useAuth() {
   const ctx = useContext(AuthContext);
   if (!ctx) throw new Error("useAuth must be used within AuthProvider");

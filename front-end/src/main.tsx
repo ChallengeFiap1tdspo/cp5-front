@@ -7,6 +7,7 @@ import Cadastro from "./routes/Cadastro";
 import { AuthProvider } from "./contexts/AuthContext";
 import "./global.css";
 
+
 const router = createBrowserRouter([
   {
     path: "/",

@@ -88,3 +88,41 @@ aria-invalid={!!errors.nomeUsuario}
 required: "O nome de usuário é obrigatório",
 minLength: { value: 3, message: "Mínimo 3 caracteres" },
 })}
+ref={(e) => {
+register("nomeUsuario");
+nameRef.current = e;
+}}
+className={`mt-1 block w-full rounded-lg border px-4 py-2 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+errors.nomeUsuario ? "border-red-300" : "border-gray-200 dark:border-gray-700"
+} bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100`}
+placeholder="seuusuario"
+autoComplete="username"
+/>
+{errors.nomeUsuario && (
+<p className="mt-1 text-sm text-red-600" role="alert">
+{errors.nomeUsuario.message}
+</p>
+)}
+</div>
+<div className="mb-4">
+<label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+Email
+</label>
+<input
+id="email"
+type="email"
+aria-invalid={!!errors.email}
+{...register("email", {
+required: "O email é obrigatório",
+pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Formato de email inválido" },
+})}
+className={`mt-1 block w-full rounded-lg border px-4 py-2 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+errors.email ? "border-red-300" : "border-gray-200 dark:border-gray-700"
+} bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100`}
+placeholder="seu@exemplo.com"
+autoComplete="email"
+/>
+{errors.email && (
+<p className="mt-1 text-sm text-red-600" role="alert">
+{errors.email.message}
+</p>

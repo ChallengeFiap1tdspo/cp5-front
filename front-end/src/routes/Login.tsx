@@ -6,3 +6,8 @@ import type { Usuario } from "../types/usuario";
 import { useAuth } from "../contexts/AuthContext";
 
 
+type FormValues = {
+nomeUsuario: string;
+email: string;
+lembrar?: boolean;
+};

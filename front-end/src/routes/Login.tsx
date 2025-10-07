@@ -75,3 +75,16 @@ return (
 {formError}
 </div>
 )}
+
+<div className="mb-4">
+<label htmlFor="nomeUsuario" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+Nome de usuário
+</label>
+<input
+id="nomeUsuario"
+type="text"
+aria-invalid={!!errors.nomeUsuario}
+{...register("nomeUsuario", {
+required: "O nome de usuário é obrigatório",
+minLength: { value: 3, message: "Mínimo 3 caracteres" },
+})}

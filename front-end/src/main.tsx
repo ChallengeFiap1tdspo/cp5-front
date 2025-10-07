@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import Login from "./routes/Login";
 import Cadastro from "./routes/Cadastro";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -12,6 +12,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
+      { path: "/", element: <Navigate to="/login" /> }, 
       { path: "/login", element: <Login /> },
       { path: "/cadastro", element: <Cadastro /> },
     ],

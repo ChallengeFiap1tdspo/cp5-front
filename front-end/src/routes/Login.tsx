@@ -126,3 +126,56 @@ autoComplete="email"
 <p className="mt-1 text-sm text-red-600" role="alert">
 {errors.email.message}
 </p>
+)}
+</div>
+
+
+<div className="mb-6 flex items-center gap-3">
+<label className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+<input {...register("lembrar")} type="checkbox" className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+Lembrar-me
+</label>
+
+
+<div className="ml-auto text-sm">
+<Link to="/recuperar" className="text-blue-600 dark:text-blue-400 hover:underline">
+Esqueci minha senha
+</Link>
+</div>
+</div>
+
+
+<div className="flex items-center gap-3">
+<button
+type="submit"
+disabled={isSubmitting}
+className={`flex h-10 items-center justify-center gap-2 rounded-lg px-4 py-2 text-white shadow-sm transition disabled:opacity-60 ${
+isSubmitting ? "bg-blue-500" : "bg-gradient-to-r from-blue-600 to-indigo-600"
+}`}
+aria-busy={isSubmitting}
+>
+  {isSubmitting && (
+<svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden>
+<circle cx="12" cy="12" r="10" strokeOpacity="0.25" strokeWidth="4" stroke="currentColor" />
+<path d="M22 12a10 10 0 00-10-10" strokeWidth="4" strokeLinecap="round" stroke="currentColor" />
+</svg>
+)}
+<span>{isSubmitting ? "Entrando..." : "Entrar"}</span>
+</button>
+
+
+<Link
+to="/cadastro"
+className="flex h-10 items-center justify-center rounded-lg border border-gray-200 px-4 py-2 text-sm text-gray-700 dark:border-gray-700 dark:text-gray-200"
+>
+Criar conta
+</Link>
+</div>
+</form>
+
+
+<p className="mt-6 text-center text-xs text-gray-400">Ao continuar, você concorda com os termos de uso.</p>
+</div>
+</div>
+);
+}

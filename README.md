@@ -9,7 +9,7 @@ Projeto desenvolvido em **React + TypeScript** com **Tailwind CSS** para o desaf
 - [Tailwind CSS v4]
 - [JSON Server]
 
-## 📦 Instalação
+##  Instalação
 
 Clone o repositório e entre na pasta do projeto:
 
@@ -27,7 +27,7 @@ O projeto ficará disponível em:
 
 http://localhost:5173
 
-📡 Rodar o Servidor Fake (JSON Server)
+Rodar o Servidor Fake (JSON Server)
 
 O backend fake está configurado com o arquivo src/data/db.json.
 Para simular o banco de dados e acessar usuários:

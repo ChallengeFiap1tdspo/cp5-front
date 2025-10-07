@@ -11,3 +11,10 @@ nomeUsuario: string;
 email: string;
 lembrar?: boolean;
 };
+
+export default function Login() {
+const {
+register,
+handleSubmit,
+formState: { errors, isSubmitting },
+} = useForm<FormValues>({ mode: "onTouched", defaultValues: { lembrar: false } });

@@ -39,3 +39,18 @@ params: { nomeUsuario: data.nomeUsuario },
 const found = resp.data.find(
 (u) => u.nomeUsuario === data.nomeUsuario && u.email === data.email
 );
+
+if (!found) {
+setFormError("Usuário não encontrado. Verifique nome de usuário e email.");
+return;
+}
+
+
+
+login(found, !!data.lembrar);
+navigate("/home");
+} catch (err) {
+console.error(err);
+setFormError("Erro ao tentar autenticar. Confira o console para detalhes.");
+}
+}

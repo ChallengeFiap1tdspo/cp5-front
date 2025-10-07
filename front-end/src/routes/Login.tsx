@@ -23,3 +23,15 @@ const { login } = useAuth();
 const navigate = useNavigate();
 const [formError, setFormError] = useState<string | null>(null);
 const nameRef = useRef<HTMLInputElement | null>(null);
+
+useEffect(() => {
+nameRef.current?.focus();
+}, []);
+
+
+async function onSubmit(data: FormValues) {
+setFormError(null);
+try {
+const resp = await api.get<Usuario[]>("/usuarios", {
+params: { nomeUsuario: data.nomeUsuario },
+});

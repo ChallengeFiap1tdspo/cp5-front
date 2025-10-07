@@ -18,3 +18,8 @@ register,
 handleSubmit,
 formState: { errors, isSubmitting },
 } = useForm<FormValues>({ mode: "onTouched", defaultValues: { lembrar: false } });
+
+const { login } = useAuth();
+const navigate = useNavigate();
+const [formError, setFormError] = useState<string | null>(null);
+const nameRef = useRef<HTMLInputElement | null>(null);

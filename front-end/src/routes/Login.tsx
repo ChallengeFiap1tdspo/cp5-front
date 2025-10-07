@@ -54,3 +54,12 @@ console.error(err);
 setFormError("Erro ao tentar autenticar. Confira o console para detalhes.");
 }
 }
+
+return (
+<div className="min-h-[70vh] flex items-center justify-center px-4">
+<div className="w-full max-w-md bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8">
+<header className="mb-6 text-center">
+<div className="mx-auto w-16 h-16 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xl mb-3">
+{/* Logo/Inicial */}
+<span>SI</span>
+</div>

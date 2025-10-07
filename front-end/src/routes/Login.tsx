@@ -35,3 +35,7 @@ try {
 const resp = await api.get<Usuario[]>("/usuarios", {
 params: { nomeUsuario: data.nomeUsuario },
 });
+
+const found = resp.data.find(
+(u) => u.nomeUsuario === data.nomeUsuario && u.email === data.email
+);

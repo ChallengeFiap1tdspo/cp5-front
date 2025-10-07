@@ -7,10 +7,7 @@ export default function Cabecalho() {
 
   return (
     <header className="flex items-center justify-between py-4 border-b">
-      <div>
-        <h1 className="text-2xl font-bold">Meu App</h1>
-        <small className="text-xs text-gray-500">Access Control CP</small>
-      </div>
+  
 
       <div className="flex items-center gap-4">
         <Menu />

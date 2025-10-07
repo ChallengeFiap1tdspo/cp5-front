@@ -63,3 +63,15 @@ return (
 {/* Logo/Inicial */}
 <span>SI</span>
 </div>
+
+<h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">Bem-vindo de volta</h2>
+<p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Entre na sua conta para continuar</p>
+</header>
+
+
+<form onSubmit={handleSubmit(onSubmit)} noValidate>
+{formError && (
+<div className="mb-4 rounded-md bg-red-50 border border-red-200 p-3 text-sm text-red-700" role="alert">
+{formError}
+</div>
+)}

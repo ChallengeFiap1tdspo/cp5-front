@@ -5,57 +5,33 @@ import { useAuth } from "../contexts/AuthContext";
 export default function Home() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
-
   if (!user) return <Navigate to="/login" replace />;
 
-  const initials = user.nome
-    ? user.nome
-        .split(" ")
-        .map((s) => s[0])
-        .slice(0, 2)
-        .join("")
-        .toUpperCase()
-    : (user.nomeUsuario || "").slice(0, 2).toUpperCase();
-
-  function handleLogout() {
-    logout();
-    navigate("/login");
-  }
+  const initials = user.nome ? user.nome.split(" ").map(s => s[0]).slice(0,2).join("").toUpperCase() : (user.nomeUsuario || "").slice(0,2).toUpperCase();
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 flex items-start">
-      <header className="w-full max-w-3xl mx-auto flex items-center justify-between gap-4 bg-white p-6 rounded-xl shadow">
-        <div className="flex items-center gap-4">
-          <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-semibold text-lg">
-            {initials}
-          </div>
+    <div className="min-h-screen p-6 flex items-start justify-center relative overflow-hidden">
+      <div className="background-effect bg-blue-effect"></div>
+      <div className="background-effect bg-purple-effect"></div>
+
+      <header className="header-glass">
+        <div className="flex items-center gap-6">
+          <div className="avatar-gradient">{initials}</div>
           <div>
-            <h1 className="text-xl font-semibold text-gray-800">{user.nome}</h1>
-            <p className="text-sm text-gray-500">{user.email}</p>
+            <h1 className="text-2xl font-bold text-gradient">{user.nome}</h1>
+            <p className="opacity-70 mt-1">{user.email}</p>
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => navigate("/cadastro")}
-            className="px-3 py-1 rounded-md text-sm border border-gray-200 bg-white hover:bg-gray-50"
-          >
-            Cadastrar usuário
-          </button>
+        <div className="flex flex-wrap gap-3 justify-center mt-4 lg:mt-0">
+          <button onClick={() => navigate("/cadastro")} className="button-success">📝 Cadastrar usuário</button>
+          <button onClick={() => navigate("/login")} className="button-primary">🔄 Voltar ao login</button>
+          <button onClick={() => { logout(); navigate("/login"); }} className="button-error">🚪 Sair</button>
+        </div>
 
-          <button
-            onClick={() => navigate("/login")}
-            className="px-3 py-1 rounded-md text-sm border border-gray-200 bg-white hover:bg-gray-50"
-          >
-            Voltar ao login
-          </button>
-
-          <button
-            onClick={handleLogout}
-            className="px-3 py-1 rounded-md text-sm bg-red-600 text-white hover:opacity-95"
-          >
-            Sair
-          </button>
+        <div className="mt-8 text-center">
+          <h2 className="text-3xl font-bold mb-4">Bem-vindo ao Sistema Futurista 🚀</h2>
+          <p className="opacity-70 text-lg">Interface moderna com design inovador</p>
         </div>
       </header>
     </div>

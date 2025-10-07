@@ -6,7 +6,7 @@ import Login from "./routes/Login";
 import Cadastro from "./routes/Cadastro";
 import Home from "./routes/Home"; // <-- adicione isso
 import { AuthProvider } from "./contexts/AuthContext";
-import "./global.css";
+import "../global.css";
 
 const router = createBrowserRouter([
   {

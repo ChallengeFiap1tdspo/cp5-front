@@ -1,5 +1,4 @@
 
-import Menu from "./Menu";
 import { useAuth } from "../contexts/AuthContext";
 
 export default function Cabecalho() {
@@ -7,10 +6,7 @@ export default function Cabecalho() {
 
   return (
     <header className="flex items-center justify-between py-4 border-b">
-  
-
       <div className="flex items-center gap-4">
-        <Menu />
         {user && (
           <div className="text-right">
             <div className="text-sm font-medium">{user.nome}</div>

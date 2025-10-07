@@ -15,7 +15,7 @@ Clone o repositório e entre na pasta do projeto:
 
 ```bash
 git clone https://github.com/ChallengeFiap1tdspo/cp5-front.git
-cd cp5-front/front-end
+cd front-end
 Instale as dependências:
 
 npm install

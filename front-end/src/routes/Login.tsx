@@ -60,11 +60,11 @@ return (
 <div className="w-full max-w-md bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8">
 <header className="mb-6 text-center">
 <div className="mx-auto w-16 h-16 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xl mb-3">
-{/* Logo/Inicial */}
-<span>SI</span>
+
+
 </div>
 
-<h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">Bem-vindo de volta</h2>
+<h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">Bem-vindo</h2>
 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Entre na sua conta para continuar</p>
 </header>
 

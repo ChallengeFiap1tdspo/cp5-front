@@ -4,7 +4,7 @@ export default function Cabecalho() {
   const { user, logout } = useAuth();
 
   return (
-    <header className="flex items-center justify-between py-4 border-b">
+    <header className="flex items-center justify-between border-b">
       <div className="flex items-center gap-4">
         {user && (
           <div className="text-right">

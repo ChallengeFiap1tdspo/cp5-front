@@ -4,7 +4,7 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import Login from "./routes/Login";
 import Cadastro from "./routes/Cadastro";
-import Home from "./routes/Home"; // <-- adicione isso
+import Home from "./routes/Home"; 
 import { AuthProvider } from "./contexts/AuthContext";
 import "../global.css";
 

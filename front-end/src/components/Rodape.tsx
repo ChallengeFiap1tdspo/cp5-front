@@ -17,7 +17,7 @@ export default function Rodape() {
     <footer
       role="contentinfo"
       aria-label="Rodapé da página"
-      className="py-6 mt-6 border-t bg-white dark:bg-gray-900"
+      className="py-6 border-t bg-white dark:bg-gray-900"
     >
       <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
         <div className="text-center sm:text-left">

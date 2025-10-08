@@ -1,7 +1,5 @@
 # CP5 Front-End
-# Integrantes:
-  Paulo Estalise RM563811
-  Emanuel Italo RM561337
+
 Projeto desenvolvido em **React + TypeScript** com **Tailwind CSS** para o desafio da FIAP (Challenge CP5).
 
 ## 🚀 Tecnologias Utilizadas
@@ -55,4 +53,6 @@ front-end/
 ├── vite.config.ts
 └── index.html
 ´´´
-
+# Integrantes:
+  Paulo Estalise RM563811
+  Emanuel Italo RM561337

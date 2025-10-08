@@ -57,7 +57,7 @@ export default function Home() {
               Bem-vindo ao Sistema
             </h2>
             <p className="text-gray-300 text-xl">
-              Interface moderna com design inovador
+              Interface moderna 
             </p>
           </div>
         </div>
